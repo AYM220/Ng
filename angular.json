@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Ng99": {
+    "Ng9": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Ng99",
+            "outputPath": "dist/Ng9",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {
@@ -62,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Ng99:build"
+            "browserTarget": "Ng9:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Ng99:build:production"
+              "browserTarget": "Ng9:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Ng99:build"
+            "browserTarget": "Ng9:build"
           }
         },
         "test": {
@@ -110,15 +113,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Ng99:serve"
+            "devServerTarget": "Ng9:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Ng99:serve:production"
+              "devServerTarget": "Ng9:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "Ng99"
+    }
+  },
+  "defaultProject": "Ng9",
+  "cli": {
+    "analytics": false
+  }
 }
